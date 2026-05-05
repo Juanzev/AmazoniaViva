@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazonia Viva</title>
+    <link rel="shortcut icon" href="picture/Logo-Amazonia-Viva-circular.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .emerald-gradient { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .pulse-green { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+    </style>
+</head>
+<body class="bg-[#0a0f0d] text-gray-100 min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <nav class="border-b border-emerald-900/30 bg-[#0a0f0d]/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-emerald-450 rounded-lg flex items-center justify-center animate-pulse">
+                    <img src="picture/Logo-Amazonia-Viva-circular.png" alt="logo amazonia">
+                </div>
+                <span class="text-xl font-bold tracking-tighter text-emerald-400">Amazonia<span class="text-white">Viva</span></span>
+            </div>
+            <div id="menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 font-medium absolute md:static top-20 right-6 bg-[#0a0f0d] p-6 md:p-0 rounded-xl md:rounded-none shadow-lg md:shadow-none z-50">
+    
+                <a href="home.html" class="hover:text-emerald-400 transition-all">Inicio</a>
+    
+                <a href="index.html" class="text-emerald-400 border-b-2 border-emerald-400 pb-1 transition-all"> Notificações</a>
+    
+                <a href="sobre.html" class="hover:text-emerald-400 transition-all">Sobre</a>
+    
+                <a href="tecnologias.html" class="hover:text-emerald-400 transition-all">Tecnologias</a>
+
+            </div>
+            <!-- BOTÃO -->
+            <button id="menu-btn" class="md:hidden text-emerald-400 text-3xl">
+            ☰
+            </button>        
+           
+        </div>
+        
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-6 py-12 flex-grow">
+        <div class="max-w-4xl mx-auto">
+            <header class="mb-12 animate__animated animate__fadeInDown">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-300">
+                    Monitoramento em Tempo Real
+                </h1>
+                <p class="text-gray-400 text-lg">Central de detecção de anomalias e fumaça para preservação ambiental.</p>
+            </header>
+
+            <!-- STATUS CARD -->
+            <div class="glass-card rounded-3xl p-8 mb-8 animate__animated animate__fadeInUp">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h2 class="text-sm font-semibold text-emerald-500 uppercase tracking-widest mb-2">Status do Sensor</h2>
+                        <div id="status-text" class="text-3xl font-bold">Carregando dados...</div>
+                    </div>
+                    <div id="status-indicator" class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-800 transition-all duration-500">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECENT ALERTS -->
+            <div class="grid grid-cols-1 gap-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <h3 class="text-xl font-bold mb-2 flex items-center">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                    Log de Eventos
+                </h3>
+                <div id="log-container" class="space-y-3">
+                    <div class="glass-card p-4 rounded-xl flex items-center border-l-4 border-emerald-500">
+                        <span class="text-emerald-500 mr-4">10:30</span>
+                        <p class="text-sm text-gray-300">Sistema inicializado com sucesso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-emerald-900/20 text-center text-gray-500 text-sm">
+        <p>© 2026 Amazonia Viva Monitoramento. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function updateStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    const textEl = document.getElementById('status-text');
+                    const indicatorEl = document.getElementById('status-indicator');
+                    const logContainer = document.getElementById('log-container');
+                    
+                    textEl.innerText = data.status;
+                    
+                    if (data.status.includes("🚨")) {
+                        textEl.className = "text-3xl font-bold text-red-500";
+                        indicatorEl.className = "w-20 h-20 rounded-full flex items-center justify-center bg-red-900/50 text-red-500 border-2 border-red-500 pulse-green";
+                        addLog(data.status, "border-red-500");
+                    } else {
+                        textEl.className = "text-3xl font-bold text-emerald-400";
+                        indicatorEl.className = "w-20 h-20 rounded-full flex items-center justify-center bg-emerald-900/50 text-emerald-400 border-2 border-emerald-500";
+                    }
+                });
+        }
+
+        function addLog(msg, borderColor) {
+            const logContainer = document.getElementById('log-container');
+            const now = new Date();
+            const timeStr = now.getHours() + ":" + now.getMinutes().toString().padStart(2, '0');
+            
+            // Só adiciona se for alerta ou se o log estiver vazio
+            if (msg.includes("🚨") || logContainer.children.length < 1) {
+                const newLog = document.createElement('div');
+                newLog.className = `glass-card p-4 rounded-xl flex items-center border-l-4 ${borderColor} animate__animated animate__fadeInLeft`;
+                newLog.innerHTML = `<span class="text-emerald-500 mr-4">${timeStr}</span><p class="text-sm text-gray-300">${msg}</p>`;
+                
+                logContainer.prepend(newLog);
+                if (logContainer.children.length > 5) logContainer.lastElementChild.remove();
+            }
+        }
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        });
+
+        setInterval(updateStatus, 2000);
+        updateStatus();
+    </script>
+</body>
+</html>

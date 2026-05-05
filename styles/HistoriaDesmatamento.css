@@ -1,0 +1,296 @@
+/* ============================================================
+   HistoriaDesmatamento.css
+   Estilos da PÁGINA (hero, timeline, charts, tabs)
+   Ajustado para responsividade Mobile consistente
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+/* ============================================================
+   HEADER ESTILO HOME (Adaptado com prefixo .av-)
+   ============================================================ */
+:root{
+    --g600: #2d6a10;
+}
+
+.av-header {
+    background: #f0fcea;
+    border-bottom: 1.5px solid #a8e87e;
+    padding: 1rem 0.5rem; /* Reduzido padding lateral no mobile */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.av-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Empilha no mobile: Logo -> Links -> Social */
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Logo */
+.av-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.av-logo-container {
+    width: 36px;
+    height: 36px;
+    background-color: #2d6a10;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.av-logo-img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.av-logo-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--g600);
+}
+
+/* Links (Menu) - Lado a lado sem quebra */
+.av-links {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: nowrap; /* Mantém em uma linha */
+    overflow-x: auto; /* Permite scroll se necessário */
+    justify-content: center; /* Centraliza no mobile */
+    width: 100%;
+    padding: 4px 5px;
+    /* Esconde a barra de scroll */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.av-links::-webkit-scrollbar {
+    display: none;
+}
+
+.av-link {
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 0.82rem; /* Reduzido para caber melhor no mobile */
+    color: #2d6a10 !important;
+    text-decoration: none !important;
+    padding: 4px 5px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: transparent !important;
+}
+
+.av-link:hover, .av-link.av-active {
+    background: #a8e87e !important;
+    color: #113004 !important;
+}
+
+.av-link.av-active {
+    border-bottom: 2px solid #5aad2e !important;
+}
+
+/* Instagram */
+.av-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3d8a1a;
+    text-decoration: none !important;
+    transition: color 0.2s;
+    font-size: 1.5rem; /* Maior no mobile */
+    margin-top: 0.25rem;
+}
+
+.av-social:hover {
+    color: #1e4d08;
+}
+
+/* Responsividade para Desktop */
+@media (max-width: 768px) {
+    .av-links {
+        flex-wrap: wrap;       /* Permite que os itens quebrem para a linha de baixo */
+        justify-content: center;
+        gap: 0.5rem;
+        overflow-x: visible;   /* Remove o scroll horizontal já que vai quebrar linha */
+    }
+
+    .av-link {
+        white-space: normal;   /* Permite que o texto dentro do link quebre linha */
+        text-align: center;
+        max-width: 120px;      /* Força a quebra */
+        line-height: 1.2;
+    }
+}
+@media (min-width: 768px) {
+    .av-header {
+        padding: 1rem 2rem;
+    }
+
+    .av-inner {
+        flex-direction: row; /* Volta para linha horizontal */
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .av-logo {
+        width: auto;
+    }
+
+    .av-links {
+        width: auto;
+        gap: 1rem;
+        justify-content: flex-start;
+        overflow-x: visible;
+    }
+
+    .av-link {
+        font-size: 0.82rem;
+    }
+
+    .av-social {
+        font-size: 1.3rem;
+        margin-top: 0;
+    }
+}
+@media (min-width: 1024px) {
+    .av-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    .av-links {
+        /* Remova o position: absolute e o transform */
+        position: static; 
+        transform: none;
+        display: flex;
+        gap: 1rem;
+        flex: 1; /* Faz o menu ocupar o espaço do meio */
+        justify-content: center; /* Centraliza os links no espaço disponível */
+    }
+}
+@media (max-width: 1023px) {
+    .av-inner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .av-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .av-link {
+        white-space: normal;
+        text-align: center;
+        max-width: 110px; /* Ajuste esse valor para forçar a quebra onde preferir */
+        font-size: 0.8rem;
+    }
+}
+
+
+/* ============================================================
+   ESTILOS DA PÁGINA (Mantidos e Refinados)
+   ============================================================ */
+
+/* Hero Section */
+.hero-pattern {
+    background-color: #1a4d2e;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Timeline */
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    height: calc(100% - 15px);
+    width: 2px;
+    background-color: #9ca3af;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 24px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* Animação */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Chart.js — container com altura definida */
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        height: 300px; /* Menor no mobile */
+    }
+}
+
+/* Tabs */
+.tab-btn {
+    border-bottom: 3px solid transparent;
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.2s, border-color 0.2s;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tab-btn:hover {
+    color: #16a34a;
+}
+
+.tab-active {
+    border-bottom: 3px solid #16a34a !important;
+    color: #16a34a !important;
+    font-weight: 600;
+}
+
+/* Esconde conteúdo de tab inativo */
+.tab-content.hidden {
+    display: none;
+}

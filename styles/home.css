@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+--g50: #f0fcea;
+--g10: #d4f5c0;
+--g200: #a8e87e;
+--g300: #7ccc4a;
+--g400: #5aad2e;
+--g500: #3d8a1a;
+--g600: #2d6a10;
+--g700: #1e4d08;
+--g800: #113004;
+--g900: #071802;
+}
+body {
+font-family: 'Tilt Neon', sans-serif;
+background: var(--g50);
+color: var(--g700);
+min-height: 100vh;
+}
+/* Header e Navegação */
+.site-header {
+background: var(--g50);
+border-bottom: 1.5px solid var(--g200);
+padding: 1rem 2rem;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logo-area a {
+display: flex;
+align-items: center;
+gap: 10px;
+text-decoration: none;
+}
+/* Novo container para a imagem com fundo verde */
+.logo-container {
+width: 36px;
+height: 36px;
+background-color: var(--g600);
+border-radius: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+flex-shrink: 0;
+}
+.logo-img {
+width: 90%; /* Ajuste aqui o tamanho da imagem dentro do quadrado */
+height: 90%;
+object-fit: contain;
+}
+.logo-text {
+font-size: 1.2rem;
+font-weight: 800;
+color: var(--g600);
+}
+.main-nav {
+display: flex;
+gap: 1rem;
+}
+.nav-link {
+font-size: 0.82rem;
+color: var(--g600);
+text-decoration: none;
+padding: 4px 10px;
+border-radius: 6px;
+transition: background .2s, color .2s;
+}
+.nav-link:hover, .active-nav {
+background: var(--g200);
+color: var(--g800);
+}
+.active-nav {
+border-bottom: 2px solid var(--g500);
+}
+.social-link {
+color: var(--g500);
+font-size: 1.3rem;
+text-decoration: none;
+transition: color .2s;
+}
+.social-link:hover {
+color: var(--g700);
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 2.5rem 1rem 1rem;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    color: var(--g700);
+    line-height: 1.2;
+}
+
+.hero-sub {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--g500);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Banner de Floresta */
+.forest-banner {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 2rem 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: linear-gradient(to bottom, var(--g10) 0%, var(--g200) 100%);
+    padding: 1.5rem 1rem 0;
+}
+
+/* Estatísticas */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: var(--g10);
+    border: 1px solid var(--g200);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.stat-num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--g600);
+}
+
+.stat-lbl {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--g500);
+    margin-top: 4px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Títulos de Seção */
+.section-title {
+    font-size: 1.4rem;
+    color: var(--g700);
+    margin: 2.5rem 0 1rem;
+    border-left: 4px solid var(--g400);
+    padding-left: 12px;
+}
+
+/* Missão */
+.mission-box {
+    background: var(--g10);
+    border: 1px solid var(--g200);
+    border-radius: 14px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.mission-box h3 {
+    font-size: 1.1rem;
+    color: var(--g600);
+    margin-bottom: 1rem;
+}
+
+.mission-box p {
+    font-size: 0.9rem;
+    color: var(--g700);
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 0.9rem;
+}
+
+.mission-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Causas */
+.causes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cause-card {
+    background: var(--g10);
+    border: 1px solid var(--g200);
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.cause-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.cause-card h3 {
+    font-size: 0.9rem;
+    color: var(--g700);
+    margin-bottom: 4px;
+}
+
+.cause-card p {
+    font-size: 0.8rem;
+    color: var(--g500);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Documentários */
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.doc-card {
+    background: var(--g700);
+    border-radius: 14px;
+    padding: 1.4rem;
+    display: block;
+    text-decoration: none;
+    transition: transform .25s, background .25s;
+}
+
+.doc-card:hover {
+    transform: translateY(-4px);
+    background: var(--g800);
+}
+
+.doc-play-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--g200);
+}
+
+.doc-card h3 {
+    font-size: 0.9rem;
+    color: var(--g10);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.doc-card p {
+    font-size: 0.78rem;
+    color: var(--g300);
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.watch-link {
+    font-size: 0.78rem;
+    color: var(--g200);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* O Que Você Pode Fazer (Tips) */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tip-card {
+    background: var(--g10);
+    border: 1px solid var(--g200);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.tip-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+}
+
+.tip-card h3 {
+    font-size: 0.85rem;
+    color: var(--g700);
+    margin-bottom: 4px;
+}
+
+.tip-card p {
+    font-size: 0.78rem;
+    color: var(--g500);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Footer */
+.site-footer {
+    background: var(--g700);
+    color: var(--g200);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stats-row, .causes-grid, .doc-grid, .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+}

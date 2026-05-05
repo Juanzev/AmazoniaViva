@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazônia Viva</title>
+    <link rel="icon" type="image/x-icon" href="picture/Logo-Amazonia-Viva-circular.png">
+
+    <!-- CSS da página (timeline, hero, charts) -->
+    <link rel="stylesheet" href="styles/HistoriaDesmatamento.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- ===== HEADER NOVO (isolado com prefixo .av-) ===== -->
+    <header class="av-header">
+        <div class="av-inner">
+
+            <a href="index.html" class="av-logo">
+                <div class="av-logo-container">
+                    <img src="picture/Logo-Amazonia-Viva-circular.png" alt="Logo" class="av-logo-img">
+                </div>
+            <span class="av-logo-text">Amazônia Viva</span>
+            </a>
+
+            <nav class="av-links">
+                <a href="home.html" class="av-link">Início</a>
+                <a href="DesmatamentoH.html" class="av-link av-active">História do Desmatamento</a>
+                <a href="Desmatamentoy.html" class="av-link">Previsão Futura</a>
+                <a href="index.html" class="av-link">Monitoramento em tempo Real </a>
+            </nav>
+
+            <a href="https://www.instagram.com/amazoniaviva.system" target="_blank" class="av-social" aria-label="Instagram">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+            </a>
+
+        </div>
+    </header>
+    <!-- ===== FIM HEADER ===== -->
+
+    <!-- Hero Section -->
+    <header class="hero-pattern text-white">
+        <div class="container mx-auto px-4 py-20 md:py-32">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Desmatamento no Brasil</h1>
+                <p class="text-xl md:text-2xl mb-8">Uma análise histórica desde 1980 até os dias atuais</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#visao-geral" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-full transition duration-300 shadow-lg">Explorar Dados</a>
+                    <a href="#movimentos" class="bg-white hover:bg-gray-100 text-green-700 font-medium py-2 px-6 rounded-full transition duration-300 shadow-lg">Movimentos Ambientais</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Visão Geral -->
+    <section id="visao-geral" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Visão Geral do Desmatamento</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-gray-700 mb-4">O desmatamento no Brasil, especialmente na Amazônia, é um problema ambiental crítico que tem sido monitorado desde a década de 1980. Ao longo desse período, diferentes governos implementaram políticas que impactaram diretamente as taxas de desmatamento.</p>
+                    <p class="text-gray-700 mb-4">A floresta amazônica, que abriga cerca de 10% de toda a biodiversidade do planeta, tem sofrido com a expansão da fronteira agrícola, pecuária, mineração ilegal e extração de madeira.</p>
+                    <p class="text-gray-700">Desde 1988, o Instituto Nacional de Pesquisas Espaciais (INPE) monitora o desmatamento na Amazônia Legal através do Projeto de Monitoramento do Desmatamento na Amazônia Legal por Satélite (PRODES), fornecendo dados cruciais para entender a evolução deste fenômeno.</p>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-green-800">Fatos Importantes</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>A Amazônia Legal corresponde a aproximadamente 59% do território brasileiro.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>O pico histórico de desmatamento ocorreu em 1995 e 2004, com mais de 29.000 km² desmatados por ano.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Entre 2004 e 2012, houve uma redução de 83% no desmatamento da Amazônia.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Desde 2019, observou-se um aumento significativo nas taxas de desmatamento.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>O Cerrado é o segundo bioma mais afetado pelo desmatamento no Brasil.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo -->
+    <section id="linha-tempo" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Linha do Tempo: Governos e Desmatamento</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>80</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">1980-1985: Governo João Figueiredo</h3>
+                            <p class="text-gray-700 mb-3">Último presidente do regime militar. Período marcado pelo início de grandes projetos de desenvolvimento na Amazônia, como o Programa Grande Carajás e a construção de hidrelétricas.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">21.500 km²/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>85</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">1985-1990: Governo José Sarney</h3>
+                            <p class="text-gray-700 mb-3">Primeiro governo civil após o regime militar. Criação do IBAMA (1989) e implementação do Programa Nossa Natureza. Período de intensificação do desmatamento devido à expansão da fronteira agrícola.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">22.400 km²/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>90</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">1990-1995: Governos Collor e Itamar Franco</h3>
+                            <p class="text-gray-700 mb-3">Realização da ECO-92 no Rio de Janeiro. Criação do Ministério do Meio Ambiente (1992). Início de maior conscientização sobre questões ambientais, mas com políticas ainda insuficientes.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">17.200 km²/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>95</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">1995-2003: Governo Fernando Henrique Cardoso</h3>
+                            <p class="text-gray-700 mb-3">Aprovação da Lei de Crimes Ambientais (1998). Criação do Sistema Nacional de Unidades de Conservação (2000). Período de altas taxas de desmatamento, com pico em 1995 (29.059 km²).</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">19.500 km²/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>03</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">2003-2011: Governo Lula (1º e 2º mandato)</h3>
+                            <p class="text-gray-700 mb-3">Criação do Plano de Ação para Prevenção e Controle do Desmatamento na Amazônia (PPCDAm) em 2004. Implementação de políticas mais rigorosas de fiscalização. Redução significativa do desmatamento a partir de 2005.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">Redução de 29.059 km² (2004) para 6.418 km² (2011)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>11</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">2011-2016: Governo Dilma Rousseff</h3>
+                            <p class="text-gray-700 mb-3">Continuidade das políticas de combate ao desmatamento. Aprovação do novo Código Florestal (2012). Taxas de desmatamento mantiveram-se relativamente estáveis, com leve aumento no final do período.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">5.420 km²/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>16</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">2016-2019: Governo Michel Temer</h3>
+                            <p class="text-gray-700 mb-3">Redução de orçamento para fiscalização ambiental. Tentativas de flexibilização de áreas protegidas. Aumento gradual das taxas de desmatamento.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">7.536 km²/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16 pb-12">
+                        <div class="timeline-dot bg-green-600 text-white"><span>19</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">2019-2022: Governo Jair Bolsonaro</h3>
+                            <p class="text-gray-700 mb-3">Enfraquecimento de órgãos de fiscalização ambiental. Redução de multas ambientais. Discurso favorável à exploração econômica de áreas protegidas. Aumento significativo das taxas de desmatamento.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">10.500 km²/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-16">
+                        <div class="timeline-dot bg-green-600 text-white"><span>23</span></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">2023-Presente: Governo Lula (3º mandato)</h3>
+                            <p class="text-gray-700 mb-3">Retomada de políticas de proteção ambiental. Fortalecimento dos órgãos de fiscalização. Compromisso internacional de zerar o desmatamento até 2030. Primeiros dados mostram redução nas taxas de desmatamento. No entanto, no início de 2025, observou-se um aumento no desmatamento. Em janeiro, houve um crescimento de 68% em relação ao mesmo mês do ano anterior, com 133 km² de floresta desmatada. Além disso, entre agosto de 2024 e março de 2025, o desmatamento acumulado aumentou 18% em comparação com o mesmo período anterior.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Taxa média de desmatamento:</span>
+                                <span class="ml-2">Em monitoramento — redução de 33,6% no 1º semestre de 2023; degradação de 33.807 km² em 2025 (+482%).</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causas do Desmatamento -->
+    <section id="causas" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Principais Causas do Desmatamento</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Agropecuária</h3>
+                        <p class="text-gray-700">A expansão da fronteira agrícola e da pecuária é responsável por cerca de 80% do desmatamento na Amazônia.</p>
+                        <div class="mt-4 text-sm"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Impacto: Muito Alto</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Extração Ilegal de Madeira</h3>
+                        <p class="text-gray-700">A extração seletiva de madeiras nobres, muitas vezes realizada ilegalmente, causa degradação florestal.</p>
+                        <div class="mt-4 text-sm"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Impacto: Alto</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Infraestrutura e Urbanização</h3>
+                        <p class="text-gray-700">A construção de estradas, hidrelétricas e a expansão urbana desordenada contribuem para o desmatamento.</p>
+                        <div class="mt-4 text-sm"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Impacto: Médio</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Mineração</h3>
+                        <p class="text-gray-700">A mineração, especialmente o garimpo ilegal, causa desmatamento direto e poluição de rios com mercúrio.</p>
+                        <div class="mt-4 text-sm"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Impacto: Alto</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Queimadas</h3>
+                        <p class="text-gray-700">Utilizadas como método de limpeza de áreas para agricultura, as queimadas frequentemente saem de controle.</p>
+                        <div class="mt-4 text-sm"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Impacto: Muito Alto</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Grilagem de Terras</h3>
+                        <p class="text-gray-700">A apropriação ilegal de terras públicas com documentação falsificada é um dos principais vetores do desmatamento.</p>
+                        <div class="mt-4 text-sm"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Impacto: Alto</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dados e Gráficos -->
+    <section id="dados" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Dados e Estatísticas</h2>
+            
+            <div class="mb-8">
+                <div class="flex flex-wrap justify-center mb-6">
+                    <button class="tab-btn px-6 py-2 mx-2 mb-2 focus:outline-none tab-active" data-tab="amazonia">Amazônia</button>
+                    <button class="tab-btn px-6 py-2 mx-2 mb-2 focus:outline-none" data-tab="cerrado">Cerrado</button>
+                    <button class="tab-btn px-6 py-2 mx-2 mb-2 focus:outline-none" data-tab="comparativo">Comparativo</button>
+                    <button class="tab-btn px-6 py-2 mx-2 mb-2 focus:outline-none" data-tab="queimadas">Queimadas</button>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div id="amazonia-tab" class="tab-content">
+                        <h3 class="text-xl font-semibold mb-4">Desmatamento na Amazônia (1988-2023)</h3>
+                        <div class="chart-container">
+                            <canvas id="amazoniaChart"></canvas>
+                        </div>
+                        <div class="mt-6 text-gray-700">
+                            <p>O gráfico mostra a evolução do desmatamento na Amazônia Legal desde o início do monitoramento sistemático pelo INPE em 1988. Observa-se picos de desmatamento em 1995 e 2004, seguidos por uma redução significativa até 2012.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="cerrado-tab" class="tab-content hidden">
+                        <h3 class="text-xl font-semibold mb-4">Desmatamento no Cerrado (2001-2023)</h3>
+                        <div class="chart-container">
+                            <canvas id="cerradoChart"></canvas>
+                        </div>
+                        <div class="mt-6 text-gray-700">
+                            <p>O Cerrado é o segundo maior bioma brasileiro e tem sofrido intensamente com o desmatamento, principalmente para expansão agrícola.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="comparativo-tab" class="tab-content hidden">
+                        <h3 class="text-xl font-semibold mb-4">Comparativo por Governo (Taxa média anual)</h3>
+                        <div class="chart-container">
+                            <canvas id="comparativoChart"></canvas>
+                        </div>
+                        <div class="mt-6 text-gray-700">
+                            <p>Este gráfico compara as taxas médias anuais de desmatamento na Amazônia durante diferentes governos desde 1988.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="queimadas-tab" class="tab-content hidden">
+                        <h3 class="text-xl font-semibold mb-4">Focos de Queimadas (2000-2023)</h3>
+                        <div class="chart-container">
+                            <canvas id="queimadasChart"></canvas>
+                        </div>
+                        <div class="mt-6 text-gray-700">
+                            <p>As queimadas estão diretamente relacionadas ao desmatamento, com destaque para os anos de 2019 e 2020, que registraram números alarmantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Impactos do Desmatamento</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">Perda de biodiversidade: estima-se que a Amazônia abrigue cerca de 10% de todas as espécies conhecidas do planeta.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">Emissão de gases de efeito estufa: o desmatamento é responsável por cerca de 44% das emissões brasileiras.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">Alteração do regime de chuvas: a floresta amazônica influencia o regime de chuvas em grande parte da América do Sul.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">Impactos em comunidades tradicionais: povos indígenas e comunidades tradicionais têm seus territórios ameaçados.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Metas e Compromissos</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">Acordo de Paris: Brasil comprometeu-se a reduzir as emissões de gases de efeito estufa em 37% até 2025 e 43% até 2030.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">Desmatamento Zero: Na COP26 (2021), o Brasil comprometeu-se a zerar o desmatamento ilegal até 2028.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">PPCDAm: Retomado em 2023, visa reduzir o desmatamento através de ações coordenadas entre órgãos federais.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700">Fundo Amazônia: Mecanismo de financiamento para projetos de prevenção e combate ao desmatamento, reativado em 2023.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movimentos e Iniciativas -->
+    <section id="movimentos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Movimentos e Iniciativas</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white border border-green-200 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Aliança pela Restauração na Amazônia</h3>
+                        <p class="text-gray-700 mb-4">Iniciativa que reúne mais de 70 organizações com o objetivo de restaurar 30 milhões de hectares de áreas degradadas na Amazônia até 2050.</p>
+                        <div class="flex items-center text-sm text-gray-500"><span class="font-medium">Fundação:</span><span class="ml-2">2017</span></div>
+                    </div>
+                </div>
+                <div class="bg-white border border-green-200 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Observatório do Clima</h3>
+                        <p class="text-gray-700 mb-4">Rede que reúne entidades da sociedade civil para discutir as mudanças climáticas no contexto brasileiro e promover políticas públicas.</p>
+                        <div class="flex items-center text-sm text-gray-500"><span class="font-medium">Fundação:</span><span class="ml-2">2002</span></div>
+                    </div>
+                </div>
+                <div class="bg-white border border-green-200 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Moratória da Soja</h3>
+                        <p class="text-gray-700 mb-4">Compromisso das principais empresas do setor de não comercializar soja produzida em áreas desmatadas da Amazônia após 2008.</p>
+                        <div class="flex items-center text-sm text-gray-500"><span class="font-medium">Fundação:</span><span class="ml-2">2006</span></div>
+                    </div>
+                </div>
+                <div class="bg-white border border-green-200 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">MapBiomas</h3>
+                        <p class="text-gray-700 mb-4">Iniciativa que produz mapas anuais de cobertura e uso do solo no Brasil desde 1985, monitorando mudanças em todos os biomas.</p>
+                        <div class="flex items-center text-sm text-gray-500"><span class="font-medium">Fundação:</span><span class="ml-2">2015</span></div>
+                    </div>
+                </div>
+                <div class="bg-white border border-green-200 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Coalizão Brasil Clima, Florestas e Agricultura</h3>
+                        <p class="text-gray-700 mb-4">Movimento multissetorial que reúne empresas, sociedade civil e academia para promover economia de baixo carbono.</p>
+                        <div class="flex items-center text-sm text-gray-500"><span class="font-medium">Fundação:</span><span class="ml-2">2015</span></div>
+                    </div>
+                </div>
+                <div class="bg-white border border-green-200 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Compromisso pela Amazônia</h3>
+                        <p class="text-gray-700 mb-4">Iniciativa de empresas brasileiras comprometidas com o desenvolvimento sustentável da Amazônia e a redução do desmatamento.</p>
+                        <div class="flex items-center text-sm text-gray-500"><span class="font-medium">Fundação:</span><span class="ml-2">2020</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-green-50 rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4 text-center">Como Você Pode Ajudar</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h4 class="font-medium">Consumo Consciente</h4>
+                        </div>
+                        <p class="text-sm text-gray-700">Prefira produtos com certificação ambiental e evite comprar de empresas envolvidas em desmatamento ilegal.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h4 class="font-medium">Apoie ONGs</h4>
+                        </div>
+                        <p class="text-sm text-gray-700">Doe para organizações que trabalham na conservação das florestas brasileiras e no combate ao desmatamento.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h4 class="font-medium">Educação Ambiental</h4>
+                        </div>
+                        <p class="text-sm text-gray-700">Compartilhe informações sobre a importância das florestas e os impactos do desmatamento.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h4 class="font-medium">Pressão Política</h4>
+                        </div>
+                        <p class="text-sm text-gray-700">Cobre dos representantes políticos medidas efetivas de combate ao desmatamento e proteção ambiental.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h4 class="font-medium">Redução da Pegada de Carbono</h4>
+                        </div>
+                        <p class="text-sm text-gray-700">Adote hábitos que reduzam sua pegada de carbono, como diminuir o consumo de carne e usar transporte público.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h4 class="font-medium">Voluntariado</h4>
+                        </div>
+                        <p class="text-sm text-gray-700">Participe de projetos de reflorestamento e outras iniciativas ambientais em sua comunidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Sobre este Site</h3>
+                    <p class="text-green-100">Este site foi criado para informar sobre o histórico do desmatamento no Brasil desde 1980, analisando dados, causas, impactos e iniciativas de combate.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Fontes de Dados</h3>
+                    <ul class="space-y-2 text-green-100">
+                        <li>Instituto Nacional de Pesquisas Espaciais (INPE)</li>
+                        <li>MapBiomas</li>
+                        <li>Observatório do Clima</li>
+                        <li>Ministério do Meio Ambiente</li>
+                        <li>IBGE</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="http://www.inpe.br/queimadas/" class="text-green-100 hover:text-white transition">Portal de Monitoramento de Queimadas (INPE)</a></li>
+                        <li><a href="https://www.gov.br/mma/pt-br" class="text-green-100 hover:text-white transition">Ministério do Meio Ambiente</a></li>
+                        <li><a href="https://mapbiomas.org/" class="text-green-100 hover:text-white transition">MapBiomas</a></li>
+                        <li><a href="https://www.ibama.gov.br/" class="text-green-100 hover:text-white transition">IBAMA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-green-700 text-center text-green-100">
+                <p>&copy; 2026 Amazônia Viva — Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/HistoriaDesmatamento.js"></script>
+</body>
+</html>

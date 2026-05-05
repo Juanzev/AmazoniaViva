@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazonia Viva</title>
+    <link rel="shortcut icon" href="picture/Logo-Amazonia-Viva-circular.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+        .glass-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); border-color: #10b981; }
+        .tech-icon { filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3)); animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    </style>
+</head>
+<body class="bg-[#0a0f0d] text-gray-100 min-h-screen">
+
+    <nav class="border-b border-emerald-900/30 bg-[#0a0f0d]/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-emerald-450 rounded-lg flex items-center justify-center animate-pulse">
+                   <img src="picture/Logo-Amazonia-Viva-circular.png" alt="logo amazonia">
+                </div>
+                <span class="text-xl font-bold tracking-tighter text-emerald-400">Amazonia<span class="text-white">Viva</span></span>
+            </div>
+            <div id="menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 font-medium absolute md:static top-20 right-6 bg-[#0a0f0d] p-6 md:p-0 rounded-xl md:rounded-none shadow-lg md:shadow-none z-50">
+    
+                <a href="home.html" class="hover:text-emerald-400 transition-all">Inicio</a>
+    
+                <a href="index.html" class="hover:text-emerald-400 transition-all"> Notificações</a>
+    
+                <a href="sobre.html" class="hover:text-emerald-400 transition-all">Sobre</a>
+    
+                <a href="tecnologias.html" class="text-emerald-400 border-b-2 border-emerald-400 pb-1 transition-all">Tecnologias</a>
+
+            </div>
+            <!-- BOTÃO -->
+            <button id="menu-btn" class="md:hidden text-emerald-400 text-3xl">
+            ☰
+            </button>        
+           
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+        <header class="text-center mb-16 animate__animated animate__fadeIn">
+            <h1 class="text-4xl font-extrabold mb-4">Stack Tecnológica</h1>
+            <p class="text-gray-400">As ferramentas que dão vida ao sistema de monitoramento.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- PYTHON -->
+            <div class="glass-card p-8 rounded-3xl text-center animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-16 h-16 mx-auto mb-6 tech-icon" alt="Python">
+                <h3 class="text-xl font-bold mb-4 text-emerald-400">Python & Flask</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Utilizamos o Python no backend pela sua robustez e facilidade de integração com hardware. O framework Flask gerencia as rotas e a comunicação em tempo real com o frontend.
+                </p>
+            </div>
+
+            <!-- ARDUINO -->
+            <div class="glass-card p-8 rounded-3xl text-center animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" class="w-16 h-16 mx-auto mb-6 tech-icon" alt="Arduino">
+                <h3 class="text-xl font-bold mb-4 text-emerald-400">C++ (Arduino)</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    O coração do hardware. O código em C++ processa os sinais analógicos dos sensores de fumaça e envia os alertas via porta Serial de forma extremamente rápida.
+                </p>
+            </div>
+
+            <!-- TAILWIND -->
+            <div class="glass-card p-8 rounded-3xl text-center animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-16 h-16 mx-auto mb-6 tech-icon" alt="Tailwind">
+                <h3 class="text-xl font-bold mb-4 text-emerald-400">Tailwind CSS</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Para uma interface moderna e responsiva. O Tailwind nos permite criar um design personalizado em tons de verde com performance otimizada e visual profissional.
+                </p>
+            </div>
+
+            <!-- HTML5 -->
+            <div class="glass-card p-8 rounded-3xl text-center animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16 h-16 mx-auto mb-6 tech-icon" alt="HTML5">
+                <h3 class="text-xl font-bold mb-4 text-emerald-400">HTML5 Semantic</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Estruturação de dados limpa e acessível. Garantimos que o sistema seja otimizado para SEO e fácil de manter com as melhores práticas de marcação.
+                </p>
+            </div>
+
+            <!-- JAVASCRIPT -->
+            <div class="glass-card p-8 rounded-3xl text-center animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-16 h-16 mx-auto mb-6 tech-icon" alt="JavaScript">
+                <h3 class="text-xl font-bold mb-4 text-emerald-400">JavaScript ES6</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Responsável pelo dinamismo da página. O JS realiza o polling assíncrono para buscar o status do sensor sem a necessidade de recarregar o navegador.
+                </p>
+            </div>
+
+            <!-- GITHUB -->
+            <div class="glass-card p-8 rounded-3xl text-center animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-16 h-16 mx-auto mb-6 tech-icon" alt="Git">
+                <h3 class="text-xl font-bold mb-4 text-emerald-400">Versionamento</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Controle total do desenvolvimento. Utilizamos Git para garantir a integridade do código e facilitar a colaboração em equipe no projeto.
+                </p>
+            </div>
+
+        </div>
+    </main>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
